@@ -15,7 +15,9 @@ class RockPaperScissors {
   generateCPUResponse(){
     const acceptedValues = [ `rock`, `paper`, `scissors` ];
 
-    return ;
+    let cpuSelection = acceptedValues[Math.floor(Math.random() * acceptedValues.length)];
+
+    return cpuSelection ;
   }
   /**
    * returns one of the following values: `win`, `lose`, `tie`
@@ -33,7 +35,20 @@ class RockPaperScissors {
    * @param {string} cpuSelection computer selection. Can only be one of the following values [`rock`, `paper`, `scissors`]
    */
   determineWinner(userSelection, cpuSelection){
+    let results;
 
+    if(userSelection == cpuSelection){
+      return results ='tie';
+    }else if (userSelection == 'rock' && cpuSelection == 'scissors' || 
+              userSelection == 'paper' && cpuSelection == 'rock' ||
+              userSelection == 'scissors' && cpuSelection == 'paper'){
+                
+                this.score.user +=1;
+                return results = 'win'
+              }else{
+                this.score.cpu +=1;
+                return results = 'lose'
+              }
   }
 
   /**
