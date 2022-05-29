@@ -43,10 +43,10 @@ class RockPaperScissors {
               userSelection == 'paper' && cpuSelection == 'rock' ||
               userSelection == 'scissors' && cpuSelection == 'paper'){
                 
-                this.score.user +=1;
+              
                 return results = 'win'
               }else{
-                this.score.cpu +=1;
+                
                 return results = 'lose'
               }
   }
@@ -57,11 +57,11 @@ class RockPaperScissors {
    */
   play(userSelection){
     let cpuSelection = this.generateCPUResponse();
-    var final = this.determineWinner(userSelection,cpuSelection);
-     if(final == 'win'){
+    var payton = this.determineWinner(userSelection,cpuSelection);
+     if(payton == 'win'){
        results = this.username + "wins";
        this.score.user++;
-     }else if (final == 'lose'){
+     }else if (payton == 'lose'){
        results ="CPU Wins"
        this.score.cpu++
      }
