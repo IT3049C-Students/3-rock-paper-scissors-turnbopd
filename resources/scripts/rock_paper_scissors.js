@@ -57,15 +57,16 @@ class RockPaperScissors {
    */
   play(userSelection){
     let cpuSelection = this.generateCPUResponse();
-    var payton = this.determineWinner(userSelection,cpuSelection);
-     if(payton == 'win'){
-       results = this.username + "wins";
+    var finished = this.determineWinner(userSelection,cpuSelection);
+    var result = "tie"
+     if(finished == "win"){
+       result = this.username + "wins";
        this.score.user++;
-     }else if (payton == 'lose'){
-       results ="CPU Wins"
+     }else if (finished == "lose"){
+       result ="CPU Wins"
        this.score.cpu++
      }
-    this.gameHistoryLog.push(`${this.username} selected ${userSelection}, CPU selected ${cpuSelection}: ${results}`);
+    this.gameHistoryLog.push(`${this.username} selected ${userSelection}, CPU selected ${cpuSelection}: ${result}`);
   }
 
 }
