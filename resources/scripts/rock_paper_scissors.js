@@ -17,7 +17,7 @@ class RockPaperScissors {
 
      let random = acceptedValues[Math.floor(Math.random() * acceptedValues.length)];
 
-    return acceptedValues[random] ;
+    return random ;
   }
   /**
    * returns one of the following values: `win`, `lose`, `tie`
